@@ -1,41 +1,42 @@
 # .github/workflows/deploy.yml
 name: Hexo Deploy
 
-# 触发器：在每次推送到 main 分支时运行此工作流
+# 触发器：监听 master 分支的推送（源码分支）
 on:
   push:
     branches:
-      - main  # 你的博客源码分支，通常是 main 或 master
+      - master
 
-# 环境变量：定义部署相关的配置
+# 环境变量
 env:
-  # 部署分支：Hexo generate 后的静态文件将推送到此分支
-  DEPLOY_BRANCH: gh-pages
-  # Git 提交用户名和邮箱
+  # 【修改 1】目标部署分支改为 main (对应你的 GitHub Pages 设置)
+  DEPLOY_BRANCH: main
   GIT_USER: GitHub Actions Bot
   GIT_EMAIL: actions@github.com
 
 jobs:
   build:
-    # 运行环境：使用最新的 Ubuntu 操作系统
     runs-on: ubuntu-latest
     
+    # 【修改 2】赋予 GITHUB_TOKEN 写权限，否则无法推送
+    permissions:
+      contents: write
+
     steps:
-      # 步骤 1: 检出代码 (获取你的博客源文件)
+      # 步骤 1: 检出代码
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          # 必须开启子模块递归，以确保 Fluid 主题被检出
-          submodules: true 
+          submodules: true
           fetch-depth: 0
 
-      # 步骤 2: 设置 Node.js 环境 (Hexo 运行所需)
+      # 步骤 2: 设置 Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20  # 推荐使用 Node.js LTS 版本
+          node-version: 20
 
-      # 步骤 3: 缓存 Node 依赖
+      # 步骤 3: 缓存依赖
       - name: Cache Node Modules
         uses: actions/cache@v4
         with:
@@ -44,11 +45,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-npm-
 
-      # 步骤 4: 安装 Hexo 及所有依赖
+      # 步骤 4: 安装依赖
       - name: Install Dependencies
         run: npm install
 
-      # 步骤 5: 运行 Hexo Generate (生成静态文件)
+      # 步骤 5: 生成静态文件
       - name: Run Hexo Generate
         run: npx hexo generate
 
@@ -56,14 +57,13 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          # 部署令牌：使用 GitHub 提供的内置 TOKEN
-          deploy_key: ${{ secrets.HEXO_DEPLOY_KEY }} 
-          # 目标分支
+          # 【修改 3】使用系统内置 Token (免配置)，替代 deploy_key
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 目标分支 (读取上面的环境变量)
           publish_branch: ${{ env.DEPLOY_BRANCH }}
           # 静态文件目录
           publish_dir: ./public
-          # Git 提交信息
+          # 提交信息
           commit_message: "Auto Deploy: ${{ github.event.head_commit.message }}"
-          # 部署时使用的 Git 用户名和邮箱
           user_name: ${{ env.GIT_USER }}
           user_email: ${{ env.GIT_EMAIL }}
