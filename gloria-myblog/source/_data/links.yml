@@ -1,0 +1,17 @@
+# source/_data/links.yml 文件内容
+
+- class_name: BIM/数字化建设
+  class_desc: Revit 二次开发与 IFC 标准的工具集
+  link_list:
+    - name: 结构智能配筋插件
+      link: /2026/01/01/revit-autopipe-detail/
+      icon: fas fa-building # 👈 替换为 Font Awesome 图标 (建筑图标)
+      intro: 基于 C# 开发的 Revit 插件，实现结构模型的自动化建模。
+    
+- class_name: Java 全栈/微服务架构
+  class_desc: Spring Cloud 架构与高并发应用
+  link_list:
+    - name: 校园二手交易平台 (Microservices)
+      link: https://github.com/zhushuohaiya/xxx
+      icon: fas fa-code # 👈 替换为 Font Awesome 图标 (代码图标)
+      intro: 采用 Spring Cloud Alibaba + Nacos 实现服务治理和高可用。

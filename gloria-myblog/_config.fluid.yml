@@ -1,0 +1,38 @@
+# ======================================================================
+# Fluid 主题 覆盖配置文件 (_config.fluid.yml) - 请确保此文件位于博客根目录
+# ======================================================================
+
+# 1. 首页 Banner 标题和副标题 (解决了上次标题不生效的问题)
+index:
+  banner_title: 好好学习，天天向上
+  banner_subtitle: JAVA全栈开发，BIM与AI结合
+      
+# 2. 导航栏菜单配置 (你需要的全新菜单结构)
+navbar:
+  menu:
+    - { key: "首页", link: "/", icon: "fas fa-home" }
+    - key: "学习"
+      link: "/categories/"
+      icon: "fas fa-book"
+      submenu:
+        - { key: "科研记录", link: "/categories/科研/", icon: "fas fa-microscope" }
+        - { key: "后端开发", link: "/categories/后端/", icon: "fas fa-server" }
+    - { key: "项目", link: "/projects/", icon: "fas fa-project-diagram" }
+    - { key: "简历", link: "/resume/", icon: "fas fa-file-alt" }
+    - { key: "关于", link: "/about/", icon: "fas fa-user" }
+
+# 3. 流量统计启用
+web_analytics:
+  enable: true
+  google:
+    measurement_id: G-DH7L4X91MB # 你的 GA4 ID
+
+
+  # ----------------------------------------------------------------------
+# 覆盖 Links 页面配置 (用于项目展示)
+# ----------------------------------------------------------------------
+links:
+  # 将默认的 links: items 清空
+  items: []
+
+# ... (保持 menu, index 等配置不变)
