@@ -1,11 +1,17 @@
+# 系统自动生成的无用文件（远程默认规则，保留）
 .DS_Store
 Thumbs.db
+
+# Hexo 运行相关（本地规则，保留）
 db.json
 *.log
 node_modules/
-public/
+
+# Hexo 部署相关（本地规则，保留）
 .deploy*/
 _multiconfig.yml
 hexo_deploy_key
 hexo_deploy_key.pub
+
+# CI/CD 分离：忽略构建后的静态文件（你的核心规则，保留1行即可）
 public/
