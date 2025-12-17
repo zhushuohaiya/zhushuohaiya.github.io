@@ -9,6 +9,7 @@ index:
       
 # 2. 导航栏菜单配置 (你需要的全新菜单结构)
 navbar:
+  blog_title: null
   menu:
     - { key: "首页", link: "/", icon: "fas fa-home" }
     - key: "学习"
@@ -20,6 +21,24 @@ navbar:
     - { key: "项目", link: "/projects/", icon: "fas fa-project-diagram" }
     - { key: "简历", link: "/resume/", icon: "fas fa-file-alt" }
     - { key: "关于", link: "/about/", icon: "fas fa-user" }
+
+code:
+  # 是否开启代码高亮
+  highlight:
+    enable: true
+    # 推荐使用 'mac' 或 'androidstudio'，'mac' 会让代码块顶部有三个红黄绿小圆点，很漂亮
+    style: 'mac' 
+    lib: 'highlightjs' 
+
+  # 是否显示行号 (建议开启，方便面试官指代代码行数)
+  line_number: true
+
+  # 是否启用复制代码按钮 (必须开启！这是技术博客的标配)
+  copy_btn: true
+  
+  # 代码块是否默认折叠 (建议 false，让代码直接展示出来)
+  fold:
+    enable: false
 
 # 3. 流量统计启用
 web_analytics:

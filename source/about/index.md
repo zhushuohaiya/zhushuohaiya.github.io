@@ -11,3 +11,6 @@ type: "about"
 
 **Java**: Spring Boot/Cloud 全栈开发
 **AI**：使用深度学习加各种模型，赋能开发
+
+### 我的代码活跃度
+![GitHub Contributions](https://ghchart.rshah.org/2196F3/zhushuohaiya)

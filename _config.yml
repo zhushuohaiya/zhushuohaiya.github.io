@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 好好学习，天天向上
+title: haiya的个人博客
 subtitle: JAVA全栈开发，BIM与AI结合
 description: 记录开发和科研的学习日志
 keywords: Java, Spring Boot, AI应用，学习
@@ -43,14 +43,24 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+
+# 1. 明确指定使用 highlight.js 引擎
 syntax_highlighter: highlight.js
+
+# 2. Highlight.js 详细配置
 highlight:
+  enable: true
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
-  hljs: false
+  # 关键修改：改为 true。
+  # 作用：这会强制在 HTML 标签中加上 'hljs' 类名，确保 Fluid 的 CSS 能找到它。
+  hljs: true 
+
+# 3. 彻底关闭 PrismJS
 prismjs:
+  enable: false
   preprocess: true
   line_number: true
   tab_replace: ''
