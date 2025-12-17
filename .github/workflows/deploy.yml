@@ -1,69 +1,47 @@
-# .github/workflows/deploy.yml
-name: Hexo Deploy
+name: Hexo Auto Deploy
 
-# 触发器：监听 master 分支的推送（源码分支）
 on:
   push:
     branches:
-      - master
-
-# 环境变量
-env:
-  # 【修改 1】目标部署分支改为 main (对应你的 GitHub Pages 设置)
-  DEPLOY_BRANCH: main
-  GIT_USER: GitHub Actions Bot
-  GIT_EMAIL: actions@github.com
+      - source
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     
-    # 【修改 2】赋予 GITHUB_TOKEN 写权限，否则无法推送
     permissions:
       contents: write
 
     steps:
-      # 步骤 1: 检出代码
-      - name: Checkout Code
+      - name: Checkout Source Code
         uses: actions/checkout@v4
         with:
+          ref: source
           submodules: true
           fetch-depth: 0
 
-      # 步骤 2: 设置 Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
+          cache: 'npm'
 
-      # 步骤 3: 缓存依赖
-      - name: Cache Node Modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
-
-      # 步骤 4: 安装依赖
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install hexo-cli -g
+          npm install
 
-      # 步骤 5: 生成静态文件
-      - name: Run Hexo Generate
-        run: npx hexo generate
+      - name: Generate Static Files
+        run: |
+          hexo clean
+          hexo generate
 
-      # 步骤 6: 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          # 【修改 3】使用系统内置 Token (免配置)，替代 deploy_key
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # 目标分支 (读取上面的环境变量)
-          publish_branch: ${{ env.DEPLOY_BRANCH }}
-          # 静态文件目录
+          publish_branch: main
           publish_dir: ./public
-          # 提交信息
-          commit_message: "Auto Deploy: ${{ github.event.head_commit.message }}"
-          user_name: ${{ env.GIT_USER }}
-          user_email: ${{ env.GIT_EMAIL }}
+          commit_message: "🚀 Auto Deploy: ${{ github.event.head_commit.message }}"
+          user_name: 'GitHub Actions Bot'
+          user_email: 'actions@github.com'
