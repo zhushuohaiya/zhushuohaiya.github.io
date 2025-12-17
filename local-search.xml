@@ -4,11 +4,24 @@
   
   
   <entry>
+    <title>测试2:检测是否真的部署成功</title>
+    <link href="/2025/12/17/%E6%B5%8B%E8%AF%952-%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E7%9C%9F%E7%9A%84%E9%83%A8%E7%BD%B2%E6%88%90%E5%8A%9F/"/>
+    <url>/2025/12/17/%E6%B5%8B%E8%AF%952-%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E7%9C%9F%E7%9A%84%E9%83%A8%E7%BD%B2%E6%88%90%E5%8A%9F/</url>
+    
+    <content type="html"><![CDATA[<p>希望真的成功了</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>测试自动部署</title>
     <link href="/2025/12/17/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/"/>
     <url>/2025/12/17/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</url>
     
-    <content type="html"><![CDATA[<p>这是测试 GitHub Actions 自动部署的文章！</p><p>如果你能在网站上看到这篇文章，说明配置成功了！🎉</p><h2 id="测试功能"><a href="#测试功能" class="headerlink" title="测试功能"></a>测试功能</h2><ul><li>自动构建</li><li>自动部署</li><li>不需要本地环境</li></ul><p>以后只需要 git push 就能更新博客啦！</p>]]></content>
+    <content type="html"><![CDATA[<p>这是测试 GitHub Actions 自动部署的文章！</p><p>如果你能在网站上看到这篇文章，说明配置成功了！🎉</p><h2 id="测试功能"><a href="#测试功能" class="headerlink" title="测试功能"></a>测试功能</h2><ul><li>自动构建</li><li>自动部署</li><li>不需要本地环境</li></ul><p>以后只需要 git push 就能更新博客啦！</p><p>aaa</p>]]></content>
     
     
     
