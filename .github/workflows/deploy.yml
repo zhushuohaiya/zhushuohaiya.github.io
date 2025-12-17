@@ -45,7 +45,3 @@ jobs:
           commit_message: "🚀 Auto Deploy: ${{ github.event.head_commit.message }}"
           user_name: 'GitHub Actions Bot'
           user_email: 'actions@github.com'
-
-# 安全加密插件配置
-encrypt:
-  enable: true

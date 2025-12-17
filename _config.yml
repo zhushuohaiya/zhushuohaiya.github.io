@@ -45,7 +45,7 @@ relative_link: false
 future: true
 
 # 1. 明确指定使用 highlight.js 引擎
-syntax_highlighter: highlight.js
+# syntax_highlighter: highlight.js
 
 # 2. Highlight.js 详细配置
 highlight:
@@ -116,3 +116,8 @@ deploy:
 
   repo: https://github.com/zhushuohaiya/zhushuohaiya.github.io.git
   branch: main 
+
+
+# 安全加密插件配置
+encrypt:
+  enable: true
