@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>功能验收：代码高亮与样式测试</title>
+    <link href="/2025/12/17/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%B5%8B%E8%AF%95/"/>
+    <url>/2025/12/17/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%B5%8B%E8%AF%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="代码高亮测试"><a href="#代码高亮测试" class="headerlink" title="代码高亮测试"></a>代码高亮测试</h1><p>这是我的博客样式测试页面。主要用于验证 <strong>Hexo-Fluid</strong> 主题的 <code>highlight</code> 配置是否生效。</p><h2 id="1-Java-代码块测试"><a href="#1-Java-代码块测试" class="headerlink" title="1. Java 代码块测试"></a>1. Java 代码块测试</h2><p>测试目标：验证 Java 关键字、注解、字符串和注释的配色。</p><pre><code class="language-java">package com.zhushuohaiya.blog;import java.util.List;/** * 这是一个测试类 * 用于验证代码高亮效果 */public class HighLightTest {    // 主函数入口    public static void main(String[] args) {        System.out.println(&quot;Hello, Fluid Theme!&quot;);                // 测试循环结构        for (int i = 0; i &lt; 5; i++) {            printStatus(i);        }    }    private static void printStatus(int index) {        // 测试数字高亮        if (index % 2 == 0) {            System.out.println(&quot;Even Number: &quot; + index);        } else {            System.err.println(&quot;Odd Number: &quot; + index);        }    }}</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>建站日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>Fluid</tag>
+      
+      <tag>测试</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>测试2:检测是否真的部署成功</title>
     <link href="/2025/12/17/%E6%B5%8B%E8%AF%952-%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E7%9C%9F%E7%9A%84%E9%83%A8%E7%BD%B2%E6%88%90%E5%8A%9F/"/>
     <url>/2025/12/17/%E6%B5%8B%E8%AF%952-%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E7%9C%9F%E7%9A%84%E9%83%A8%E7%BD%B2%E6%88%90%E5%8A%9F/</url>
