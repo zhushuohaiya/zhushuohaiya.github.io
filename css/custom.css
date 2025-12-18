@@ -57,85 +57,79 @@
 
 
 /* ============================================================
-   Fluid Theme - 完美融合级子菜单美化
+   Fluid Theme - 兼容移动端的子菜单美化方案
    ============================================================ */
 
-/* 1. 创建“隐形桥接”：解决鼠标移向子菜单时容易消失的问题 */
-.navbar .nav-item.dropdown::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 20px; /* 桥接导航栏与菜单之间的间隙 */
-  background: transparent;
-  z-index: -1;
-}
+/* --- 1. 仅在桌面端（宽度 >= 992px）启用悬停动效 --- */
+@media (min-width: 992px) {
+  /* 桥接：防止鼠标移出 */
+  .navbar .nav-item.dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+  }
 
-/* 2. 子菜单容器：实现毛玻璃与物理动效 */
-.navbar .dropdown-menu {
-  /* 基础样式复位 */
-  display: block !important; 
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  padding: 8px 0 !important;
-  margin-top: 12px !important;
-  border-radius: 12px !important; /* 更加圆润的现代感 */
-  
-  /* 核心：同步 Fluid 风格的毛玻璃效果 */
-  background-color: rgba(var(--navbar-bg-color-rgb), 0.75) !important;
-  backdrop-filter: blur(12px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
-  
-  /* 深度感：柔和的长阴影 */
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
-
-  /* 动效状态：初始隐藏 */
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none; /* 隐藏时不可交互 */
-  transform: translateY(10px) scale(0.98); /* 结合缩放，更有弹出感 */
-  
-  /* 动效曲线：使用标准的物理缓动曲线 */
-  transition: 
-    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0.3s !important;
-}
-
-/* 3. 悬停状态：平滑呼出 */
-.navbar .nav-item.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0) scale(1);
-}
-
-/* 4. 子菜单单项样式优化 */
-.navbar .dropdown-item {
-  position: relative;
-  color: var(--navbar-text-color) !important; /* 自动同步导航栏文字颜色 */
-  padding: 10px 20px !important;
-  font-size: 0.9rem;
-  transition: all 0.25s ease !important;
-  background: transparent !important; /* 初始背景透明 */
-}
-
-/* 5. 子菜单单项悬停：轻微侧移反馈 */
-.navbar .dropdown-item:hover {
-  color: var(--link-hover-color) !important; /* 使用 Fluid 链接高亮色 */
-  padding-left: 25px !important; /* 经典的“向右划出”反馈 */
-  background-color: rgba(var(--link-hover-color-rgb), 0.1) !important; /* 极淡的背景色注入 */
-}
-
-/* 适配手机端：在移动端通常不需要这些复杂的动效 */
-@media (max-width: 991.98px) {
+  /* 子菜单容器：实现毛玻璃与动效 */
   .navbar .dropdown-menu {
-    backdrop-filter: none !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    transform: none !important;
+    display: block !important; /* 桌面端强制显示以支持 Transition */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin-top: 10px !important;
+    border-radius: 12px !important;
+    background-color: rgba(var(--navbar-bg-color-rgb), 0.75) !important;
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+
+    /* 初始隐藏状态 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  /* 悬停显示 */
+  .navbar .nav-item.dropdown:hover .dropdown-menu {
     opacity: 1 !important;
     visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* 子菜单项悬停：轻微侧移 */
+  .navbar .dropdown-item:hover {
+    padding-left: 25px !important;
+    background-color: rgba(var(--link-hover-color-rgb), 0.1) !important;
+  }
+}
+
+/* --- 2. 针对移动端（宽度 < 992px）的优化 --- */
+@media (max-width: 991.98px) {
+  /* 恢复 Fluid 默认的点击展开逻辑 */
+  .navbar .dropdown-menu {
+    /* 移除桌面端的强制定位和透明度，让它回归文档流 */
+    display: none; 
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    
+    /* 移动端样式微调：增加一点左边距，让它看起来像二级菜单 */
     border: none !important;
+    background-color: transparent !important; /* 跟随侧边栏背景 */
+    box-shadow: none !important;
+    padding-left: 1.5rem !important; 
+    transition: none !important;
+  }
+
+  /* 当 Bootstrap 给菜单加上 .show 类时，才显示（这是点击触发的结果） */
+  .navbar .dropdown-menu.show {
+    display: block;
+  }
+
+  /* 移动端点击反馈 */
+  .navbar .dropdown-item:active {
+    background-color: rgba(var(--link-hover-color-rgb), 0.2) !important;
   }
 }
