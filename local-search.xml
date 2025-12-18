@@ -11,10 +11,16 @@
     <content type="html"><![CDATA[<h3 id="一、-缘起：从羡慕到行动-Why-I-started"><a href="#一、-缘起：从羡慕到行动-Why-I-started" class="headerlink" title="一、 缘起：从羡慕到行动 (Why I started)"></a>一、 缘起：从羡慕到行动 (Why I started)</h3><p>其实搭建博客的想法源于一位技术很强的好友。偶然发现他有自己的网站时，我非常惊奇。最近在写科研文档，加上学习 Java 缺乏动力（黑马的课看了两个月才看完 SE），我意识到我需要一个外部激励机制。</p><p>这个博客的学习板块将作为我的“公开学习笔记”<strong>，通过输出倒逼输入，记录我的 Java 学习进展和科研收获。虽然可能没人看，但对我这种有点表演型人格的人来说，应该还是会起到一点点作用。</strong></p><h3 id="二、-技术栈：便宜才是王道-How-I-built-it"><a href="#二、-技术栈：便宜才是王道-How-I-built-it" class="headerlink" title="二、 技术栈：便宜才是王道(How I built it)"></a>二、 技术栈：便宜才是王道(How I built it)</h3><p>作为一个初学者，我选择了最经济的静态托管方案：<strong>Hexo + GitHub Pages</strong>。真是一分钱没花，我甚至没给自己买域名。这次搭建我是全程在 AI（Gemini 和豆包）的辅助下完成的，当然也被ai带到沟里很多次😎。</p><h3 id="三、-功能落地：麻雀虽小，五脏俱全-What-I-Delivered"><a href="#三、-功能落地：麻雀虽小，五脏俱全-What-I-Delivered" class="headerlink" title="三、 功能落地：麻雀虽小，五脏俱全 (What I Delivered)"></a>三、 功能落地：麻雀虽小，五脏俱全 (What I Delivered)</h3><p>在 AI 的辅助下，我搭建了一个能跑的静态页面，还实现了一套完整的工作流：</p><p><strong>1. 个性化导航与分类</strong></p><p>通过修改 Hexo 的 _config.yml 配置文件，我重构了导航栏，将其划分为项目，学习，关于，和简历等板块。关于部分我加入了GitHub的热力图（虽然我还是一片空白）</p><p><strong>2. 自动化部署 （CICD）</strong></p><p>这是我最开心的部分。我通过配置 <strong>GitHub Actions</strong> 实现了自动化部署。当然这里也是我卡的最久的地方。</p><p><strong>以前：</strong> 每次写完要在本地手动生成 (hexo g) 再推送到仓库。</p><p><strong>现在的实现：</strong> 我只需要将 Markdown 源码 push 到 GitHub 的源分支，GitHub Actions 就会自动在云端触发构建脚本，生成静态网页并发布。这让我摆脱了对本地环境的依赖。</p><p><strong>3. 数据监控</strong></p><p>为了满足一点点“虚荣心”，我接入了 <strong>Google Analytics</strong>。虽然现在的 UV（独立访客）可能只有我自己，但能在后台看到流量数据的波动，让我对网站的运营有了最基础的感知。</p><p><strong>4. 隐私保护</strong></p><p>考虑到<strong>简历</strong>涉及个人隐私，我利用 Hexo 的加密插件 (hexo-blog-encrypt) 对特定页面进行了加密处理。只有输入正确密码才能查看。</p><h3 id="四、-复盘：从被ai操控到把ai当做工具-What-I-learned"><a href="#四、-复盘：从被ai操控到把ai当做工具-What-I-learned" class="headerlink" title="四、 复盘：从被ai操控到把ai当做工具(What I learned)"></a>四、 复盘：从被ai操控到把ai当做工具(What I learned)</h3><p>刚开始，我对 Git 和配置文件一窍不通，完全是机械地复制粘贴 AI 的指令。这种“知其然不知其所以然”的状态在部署阶段让我吃尽了苦头——一旦报错，寸步难行。尤其是一个报错解决完以后下一个报错又开始，不管怎样一直找不到问题真正的本质原因。</p><p>在卡顿和试错中，我不得不停下来去理解底层的逻辑：</p><p>什么是 git commit 和分支？</p><p>GitHub Pages 的 origin 到底指向哪里？</p><p>AI 给出的配置为什么会失效？</p><p>盲目使用ai让我很痛苦，也让我发现ai确实本质上只是输出概率分布最大的东西，如果技术不进步，ai永远需要人来监管，而监管和修改需要对问题有足够的了解和理解，虽然降低了门槛但不代表我什么都不需要知道。这也是我搭建这个博客最大的收获：<strong>工具只是辅助，理解原理才是核心。</strong></p><p>当然，知识层面上，我算是大致了解了开发一个静态博客的流程，并使用了很多的工具，hexo，git；熟悉了git的常见基本指令，理解GitHub的repository具体在做什么，如何把本地的改动add，commit，push到GitHub上。关键在于我对git算是入门了，后面再去学习和看文章我会轻松很多，而不是云里雾里。</p><h3 id="五、-结语"><a href="#五、-结语" class="headerlink" title="五、 结语"></a>五、 结语</h3><p>这是我的第一篇博客，后面我会再利用ai总结一下自己整个开发过程遇到的技术问题，解决方案等等。未来，希望能在这里见证自己技术的成长。Keep coding, keep writing.</p>]]></content>
     
     
+    <categories>
+      
+      <category>项目</category>
+      
+    </categories>
+    
     
     <tags>
       
-      <tag>项目</tag>
+      <tag>随笔</tag>
       
     </tags>
     
@@ -65,37 +71,11 @@
   
   
   <entry>
-    <title>测试2:检测是否真的部署成功</title>
-    <link href="/2025/12/17/%E6%B5%8B%E8%AF%952-%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E7%9C%9F%E7%9A%84%E9%83%A8%E7%BD%B2%E6%88%90%E5%8A%9F/"/>
-    <url>/2025/12/17/%E6%B5%8B%E8%AF%952-%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E7%9C%9F%E7%9A%84%E9%83%A8%E7%BD%B2%E6%88%90%E5%8A%9F/</url>
-    
-    <content type="html"><![CDATA[<p>希望真的成功了</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>测试自动部署</title>
     <link href="/2025/12/17/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/"/>
     <url>/2025/12/17/%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</url>
     
     <content type="html"><![CDATA[<p>这是测试 GitHub Actions 自动部署的文章！</p><p>如果你能在网站上看到这篇文章，说明配置成功了！🎉</p><h2 id="测试功能"><a href="#测试功能" class="headerlink" title="测试功能"></a>测试功能</h2><ul><li>自动构建</li><li>自动部署</li><li>不需要本地环境</li></ul><p>以后只需要 git push 就能更新博客啦！</p><p>aaa</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Test Article for Actions</title>
-    <link href="/2025/12/16/Test-Article-for-Actions/"/>
-    <url>/2025/12/16/Test-Article-for-Actions/</url>
-    
-    <content type="html"><![CDATA[<p>这是测试GitHub Actions 自动化部署的文章内容。</p>]]></content>
     
     
     

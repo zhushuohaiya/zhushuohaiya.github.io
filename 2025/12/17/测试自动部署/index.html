@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -27,7 +27,7 @@
 <meta property="og:description" content="这是测试 GitHub Actions 自动部署的文章！ 如果你能在网站上看到这篇文章，说明配置成功了！🎉 测试功能 自动构建 自动部署 不需要本地环境  以后只需要 git push 就能更新博客啦！ aaa">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-17T20:44:18.000Z">
-<meta property="article:modified_time" content="2025-12-18T05:55:31.174Z">
+<meta property="article:modified_time" content="2025-12-18T09:48:36.839Z">
 <meta property="article:author" content="zhushuohaiya">
 <meta property="article:tag" content="Java, Spring Boot, AI应用，学习">
 <meta name="twitter:card" content="summary_large_image">
@@ -66,6 +66,10 @@
     <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
+
+
+  
+<link rel="stylesheet" href="/css/custom.css">
 
 
 
@@ -110,7 +114,9 @@
 
 
   
-<meta name="generator" content="Hexo 8.1.1"></head>
+<!-- hexo injector head_end start -->
+  <link rel="stylesheet" href="/css/custom.css" />
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head>
 
 
 <body>
@@ -185,9 +191,33 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/projects/" target="_self">
+              <a class="nav-link" href="/categories/%E9%A1%B9%E7%9B%AE" target="_self">
                 <i class="fas fa-project-diagram"></i>
                 <span>项目</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="fas fa-archive"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="fas fa-tags"></i>
+                <span>标签</span>
               </a>
             </li>
           
@@ -369,14 +399,7 @@
           <div>许可协议</div>
           <div>
             
-              
-              
-                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                    <i class="iconfont icon-cc-by"></i>
-                  </span>
-                </a>
-              
+              CC BY-NC-SA 4.0
             
           </div>
         </div>
@@ -392,9 +415,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/12/17/%E6%B5%8B%E8%AF%952-%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E7%9C%9F%E7%9A%84%E9%83%A8%E7%BD%B2%E6%88%90%E5%8A%9F/" title="测试2:检测是否真的部署成功">
+                      <a href="/2025/12/17/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%B5%8B%E8%AF%95/" title="功能验收：代码高亮与样式测试">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">测试2:检测是否真的部署成功</span>
+                        <span class="hidden-mobile">功能验收：代码高亮与样式测试</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -402,8 +425,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/12/16/Test-Article-for-Actions/" title="Test Article for Actions">
-                        <span class="hidden-mobile">Test Article for Actions</span>
+                      <a href="/2025/12/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAAI%E9%A1%B9%E7%9B%AE/" title="我的第一个AI项目">
+                        <span class="hidden-mobile">我的第一个AI项目</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -506,7 +529,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+      © <span id="year"></span> <span class="heart-emoji">❤️</span> <strong>zhushuohaiya</strong><script>document.getElementById("year").innerText = new Date().getFullYear()</script>
     </div>
   
   

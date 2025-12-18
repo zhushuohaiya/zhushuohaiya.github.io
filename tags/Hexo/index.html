@@ -8,8 +8,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
@@ -60,6 +60,10 @@
 
 
 
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
@@ -102,7 +106,9 @@
 
 
   
-<meta name="generator" content="Hexo 8.1.1"></head>
+<!-- hexo injector head_end start -->
+  <link rel="stylesheet" href="/css/custom.css" />
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"></head>
 
 
 <body>
@@ -177,9 +183,33 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/projects/" target="_self">
+              <a class="nav-link" href="/categories/%E9%A1%B9%E7%9B%AE" target="_self">
                 <i class="fas fa-project-diagram"></i>
                 <span>项目</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="fas fa-archive"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="fas fa-tags"></i>
+                <span>标签</span>
               </a>
             </li>
           
@@ -338,7 +368,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+      © <span id="year"></span> <span class="heart-emoji">❤️</span> <strong>zhushuohaiya</strong><script>document.getElementById("year").innerText = new Date().getFullYear()</script>
     </div>
   
   
