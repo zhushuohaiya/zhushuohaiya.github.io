@@ -6,6 +6,8 @@
 index:
   banner_title: 好好学习，天天向上
   banner_subtitle: JAVA全栈开发，BIM与AI结合
+  banner_img: /img/default.jpg
+  banner_parallax: true
       
 # 2. 导航栏菜单配置 (你需要的全新菜单结构)
 navbar:
@@ -18,9 +20,16 @@ navbar:
       submenu:
         - { key: "科研记录", link: "/categories/科研/", icon: "fas fa-microscope" }
         - { key: "后端开发", link: "/categories/后端/", icon: "fas fa-server" }
-    - { key: "项目", link: "/projects/", icon: "fas fa-project-diagram" }
+    - { key: "项目", link: "/categories/项目", icon: "fas fa-project-diagram" }
+    - { key: "归档", link: "/archives/", icon: "fas fa-archive" }
+    - { key: "标签", link: "/tags/", icon: "fas fa-tags" }
+  
     - { key: "简历", link: "/resume/", icon: "fas fa-file-alt" }
     - { key: "关于", link: "/about/", icon: "fas fa-user" }
+  # 毛玻璃效果
+  ground_glass:
+    enable: true
+    px: 15
 
 code:
   # 是否开启代码高亮
@@ -55,3 +64,30 @@ links:
   items: []
 
 # ... (保持 menu, index 等配置不变)
+
+# 定制标签的胶囊风格，之前的太丑了
+custom_css: /css/custom.css
+
+# 页脚
+footer:
+  # 1. 把 <i class="..."></i> 换成了 <span class="heart-emoji">❤️</span>
+  # 2. 保留了 JS 自动获取年份的功能
+  content: '© <span id="year"></span> <span class="heart-emoji">❤️</span> <strong>zhushuohaiya</strong><script>document.getElementById("year").innerText = new Date().getFullYear()</script>'
+  
+  statistics:
+    enable: false
+
+head:
+  # 浏览器标签页上的小图标
+  favicon: /img/logo.png
+  # 苹果设备添加到主屏幕时的图标（可选，可以和上面一样）
+  apple_touch_icon: /img/logo.png
+
+  # --- 文章页配置 ---
+post:
+  # 版权声明 / 许可协议
+  copyright:
+    enable: true
+    # 这里写你想展示的协议，比如 "CC BY-NC-SA 4.0"
+    license: 'CC BY-NC-SA 4.0'
+    content: '本文作者：zhushuohaiya，转载请注明出处。'

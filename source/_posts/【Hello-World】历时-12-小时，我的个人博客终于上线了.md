@@ -1,7 +1,8 @@
 ---
 title: 【Hello World】历时 12 小时，我的个人博客终于上线了
 date: 2025-12-18 12:38:24
-tags: [项目]
+categories: [项目]
+tags: [随笔]
 ---
 
 ### 一、 缘起：从羡慕到行动 (Why I started)

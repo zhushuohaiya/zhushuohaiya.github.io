@@ -1,5 +1,7 @@
 ---
-title: about
+title: 关于我
+banner_img: /img/about.jpg 
+banner_img_height: 100
 date: 2025-12-16 10:37:22
 type: "about"
 ---
