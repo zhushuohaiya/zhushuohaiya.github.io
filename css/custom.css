@@ -107,29 +107,45 @@
 
 /* --- 2. 针对移动端（宽度 < 992px）的优化 --- */
 @media (max-width: 991.98px) {
-  /* 恢复 Fluid 默认的点击展开逻辑 */
   .navbar .dropdown-menu {
-    /* 移除桌面端的强制定位和透明度，让它回归文档流 */
-    display: none; 
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
+    /* 1. 核心改动：不再使用 display: none */
+    display: block !important; 
     
-    /* 移动端样式微调：增加一点左边距，让它看起来像二级菜单 */
+    /* 2. 初始状态：高度为0，透明度为0，溢出隐藏 */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    
+    /* 3. 基础样式重置 */
     border: none !important;
-    background-color: transparent !important; /* 跟随侧边栏背景 */
+    background-color: transparent !important;
     box-shadow: none !important;
-    padding-left: 1.5rem !important; 
-    transition: none !important;
+    padding: 0 1.5rem !important; /* 增加缩进，体现层级 */
+    margin: 0 !important;
+    
+    /* 4. 定义平滑过渡：针对高度和透明度 */
+    /* 使用 ease-in-out 让展开和收起看起来更自然 */
+    transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out !important;
   }
 
-  /* 当 Bootstrap 给菜单加上 .show 类时，才显示（这是点击触发的结果） */
+  /* 5. 当点击展开时 (.show 类被 Fluid 的 JS 添加) */
   .navbar .dropdown-menu.show {
-    display: block;
+    /* 这里的 max-height 设为一个大于你子菜单实际高度的值即可 */
+    max-height: 500px; 
+    opacity: 1;
+    padding-top: 5px !important;
+    padding-bottom: 10px !important;
   }
 
-  /* 移动端点击反馈 */
+  /* 移动端子菜单项的点击反馈 */
+  .navbar .dropdown-item {
+    color: var(--navbar-text-color) !important;
+    padding: 8px 0 !important;
+    background: none !important;
+    transition: color 0.2s ease;
+  }
+
   .navbar .dropdown-item:active {
-    background-color: rgba(var(--link-hover-color-rgb), 0.2) !important;
+    color: var(--link-hover-color) !important;
   }
 }
