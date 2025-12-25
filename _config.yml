@@ -121,3 +121,10 @@ deploy:
 # 安全加密插件配置
 encrypt:
   enable: true
+
+# 暂时注释掉
+# theme_config:
+#   footer:
+#     statistics:
+#       enable: true
+#       source: "busuanzi"

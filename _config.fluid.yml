@@ -49,11 +49,13 @@ code:
   fold:
     enable: false
 
-# 3. 流量统计启用
+# 3. 流量统计启用&busuanzi访客统计
+# web_analytics控制是否向网页插入js脚本
 web_analytics:
   enable: true
   google:
     measurement_id: G-DH7L4X91MB # 你的 GA4 ID
+  busuanzi: true
 
 
   # ----------------------------------------------------------------------
@@ -65,7 +67,7 @@ links:
 
 # ... (保持 menu, index 等配置不变)
 
-# 定制标签的胶囊风格，之前的太丑了
+# 定制标签的胶囊风格，之前的太丑了 
 custom_css: /css/custom.css
 
 # 页脚
@@ -73,9 +75,16 @@ footer:
   # 1. 把 <i class="..."></i> 换成了 <span class="heart-emoji">❤️</span>
   # 2. 保留了 JS 自动获取年份的功能
   content: '© <span id="year"></span> <span class="heart-emoji">❤️</span> <strong>zhushuohaiya</strong><script>document.getElementById("year").innerText = new Date().getFullYear()</script>'
+
+  # 暂时注释掉  
+  # statistics:
+  #   enable: true
+  #   source: "busuanzi"
+  #   pv_label: "总访问量"
+  #   pv_format: "{value}"
+  #   uv_label: "总访客数"
+  #   uv_format: "{value}"
   
-  statistics:
-    enable: false
 
 head:
   # 浏览器标签页上的小图标
@@ -91,3 +100,16 @@ post:
     # 这里写你想展示的协议，比如 "CC BY-NC-SA 4.0"
     license: 'CC BY-NC-SA 4.0'
     content: '本文作者：zhushuohaiya，转载请注明出处。'
+  meta:
+    views:
+      enable: true
+      source: "busuanzi"
+      label: "本文阅读量"
+    
+# 全局开启懒加载
+lazyload:
+  enable: true
+  # 加载时的占位图，可以换成你喜欢的 loading 图
+  loading_img: /img/loading.gif 
+  # 只有在特定的内页或首页开启
+  onlypost: false
