@@ -1,0 +1,11 @@
+0000000000000000000000000000000000000000 4e16b38164731e566079be5da4ab6af048ab66a1 zhushuohaiya <hellozs321@163.com> 1765889315 +0800	commit (initial): feat: Add GitHub Actions for automated deployment
+4e16b38164731e566079be5da4ab6af048ab66a1 4e16b38164731e566079be5da4ab6af048ab66a1 zhushuohaiya <hellozs321@163.com> 1765889851 +0800	Branch: renamed refs/heads/master to refs/heads/master
+4e16b38164731e566079be5da4ab6af048ab66a1 5d622d95e0da443cb0c7b38f37a69fa4e6807e87 zhushuohaiya <hellozs321@163.com> 1765890376 +0800	commit (amend): feat: Add GitHub Actions for automated deployment
+5d622d95e0da443cb0c7b38f37a69fa4e6807e87 c2e485b836967ae28ead86f5a98bc8a1b6999d84 zhushuohaiya <hellozs321@163.com> 1765890831 +0800	commit: Final check on deployment config
+c2e485b836967ae28ead86f5a98bc8a1b6999d84 c9a9a5fe01c2a685fa70e2c2c9191788fdc757b8 zhushuohaiya <hellozs321@163.com> 1765892380 +0800	commit (merge): Merge branch 'main' of https://github.com/zhushuohaiya/zhushuohaiya.github.io
+c9a9a5fe01c2a685fa70e2c2c9191788fdc757b8 9ab27b16f7cf5c622972dc2ac54853135ff03648 zhushuohaiya <hellozs321@163.com> 1765893665 +0800	commit: Add public/ to gitignore for CI/CD separation
+9ab27b16f7cf5c622972dc2ac54853135ff03648 9ac12dcf5fa12626637966af106a61f991ba5cfa zhushuohaiya <hellozs321@163.com> 1765894790 +0800	commit: feat: Add test article to trigger CI/CD deployment
+9ac12dcf5fa12626637966af106a61f991ba5cfa 668730cef07ef9b60d9a04ba93ff76b089fbbb9c zhushuohaiya <hellozs321@163.com> 1765895718 +0800	commit: Switch to GITHUB_TOKEN for deployment
+668730cef07ef9b60d9a04ba93ff76b089fbbb9c 33b8b8e4374b609525ec99956441ebc2ff6acb66 zhushuohaiya <hellozs321@163.com> 1765896067 +0800	commit: Force trigger GitHub Actions
+33b8b8e4374b609525ec99956441ebc2ff6acb66 bc5aaf89e67ac85f0994eba3a931b4ca8a21cd89 zhushuohaiya <hellozs321@163.com> 1765897342 +0800	commit: Finalize repository relocation to project root
+bc5aaf89e67ac85f0994eba3a931b4ca8a21cd89 bc5aaf89e67ac85f0994eba3a931b4ca8a21cd89 zhushuohaiya <hellozs321@163.com> 1765972455 +0800	Branch: renamed refs/heads/master to refs/heads/main
